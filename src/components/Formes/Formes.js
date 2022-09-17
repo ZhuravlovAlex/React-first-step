@@ -8,7 +8,7 @@ import Btns from '../Btns/Btns';
 class Formes extends React.Component {
   render() {
     return (
-			<div className='main'>
+			<div className={styles.main}>
 				<h1 className='title'>Questionnaire</h1>
 				<SingleLine></SingleLine>
 				<MultiLine></MultiLine>
