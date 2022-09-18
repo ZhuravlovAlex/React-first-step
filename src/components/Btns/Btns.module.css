@@ -15,7 +15,15 @@
 	border-radius: 4px;
 	margin-top: 10px;
 }
+.btns>input {
+	width: 100px;
+	margin: 0 auto;
+	background-color: lightblue;
+	border: solid 2px black;
+	border-radius: 4px;
+	margin-top: 10px;
+}
 
-.btns>button:last-child {
+.btns>input:last-child {
 	margin-bottom: 10px;
 }
