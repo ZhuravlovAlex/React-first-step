@@ -8,7 +8,7 @@ class SingleLine extends React.Component {
     return (
 			<div className={styles.single}>
 				<label htmlFor="name_form">Name</label>
-				<textarea rows={1} id="name_form" placeholder='Enter Name'></textarea>
+				<input type='text'  required rows={1} id="name_form" placeholder='Enter Name'/>
 
 				<label htmlFor="surname_form">Surname</label>
 				<textarea rows={1} id="surname_form" placeholder='Enter Surname'></textarea>
