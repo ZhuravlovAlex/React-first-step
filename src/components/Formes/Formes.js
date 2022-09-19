@@ -5,7 +5,6 @@ import MultiLine from '../MultiLine/MultiLine';
 import Btns from '../Btns/Btns';
 import Tables from '../Tables/Tables';
 
-
 class Formes extends React.Component {
 
 	constructor(props) {
@@ -21,49 +20,47 @@ class Formes extends React.Component {
 			isSubmitted: false
 		}
 
-		this.handleWebsiteChange = this.handleWebsiteChange.bind(this);
-		this.handleFNameChange = this.handleFNameChange.bind(this);
-		this.handleSNameChange = this.handleSNameChange.bind(this);
-		this.handlePhoneChange = this.handlePhoneChange.bind(this);
-		this.handleBirthDateChange = this.handleBirthDateChange.bind(this);
-		this.handleAboutChange = this.handleAboutChange.bind(this);
-		this.handleStackChange = this.handleStackChange.bind(this);
+		this.updateState = this.updateState.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
-	handleWebsiteChange(event) {
-		this.setState({website: event.target.value})
+	updateState (key) {
+		return (event) => {
+			this.setState({[key]: event.target.value})
+		}
 	}
 
-	handleFNameChange (event) {
-		this.setState({firstName: event.target.value});
-		console.log(this.state)
-	};
+	// handleWebsiteChange(event) {
+	// 	this.setState({website: event.target.value})
+	// }
+
+	// handleFNameChange (event) {
+	// 	this.setState({firstName: event.target.value});
+	// 	console.log(this.state)
+	// };
   
-	handleSNameChange (event) {
-		this.setState({surName: event.target.value});
-	}
+	// handleSNameChange (event) {
+	// 	this.setState({surName: event.target.value});
+	// }
 
-	handlePhoneChange (event) {
-		this.setState({phone: event.target.value});
-	}
+	// handlePhoneChange (event) {
+	// 	this.setState({phone: event.target.value});
+	// }
 
-	handleBirthDateChange (event) {
-		this.setState({birthDate: event.target.value});
-	}
+	// handleBirthDateChange (event) {
+	// 	this.setState({birthDate: event.target.value});
+	// }
 
-	handleAboutChange (event) {
-		this.setState({about: event.target.value});
-	}
+	// handleAboutChange (event) {
+	// 	this.setState({about: event.target.value});
+	// }
 
-	handleStackChange (event) {
-		this.setState({stack: event.target.value});
-	}
+	// handleStackChange (event) {
+	// 	this.setState({stack: event.target.value});
+	// }
 
 	handleSubmit() {
 		console.log('form is submitted');
-
-		//kakieto proverki
 
 		this.setState({isSubmitted: true});
 	}
@@ -75,12 +72,21 @@ class Formes extends React.Component {
 				<form onSubmit={this.handleSubmit}>
 					<h1 className='title'>Questionnaire</h1>
 					<SingleLine
-						handleFNameChange={this.handleFNameChange}
+						handleFNameChange={this.updateState('firstName')}
+						handleSNameChange={this.updateState('surName')}
+						handlePhoneChange={this.updateState('phone')}
+						handleBirthDateChange={this.updateState('birthDate')}
+						handleWebsiteChange={this.updateState('website')}
 					></SingleLine>
-					<MultiLine></MultiLine>
+					<MultiLine
+						handleAboutChange={this.updateState('about')}
+						handleStackChange={this.updateState('stack')}
+					></MultiLine>
 					<Btns></Btns>
 				</form>
-			</div> : <Tables></Tables>
+			</div> : <Tables
+									state={this.state}
+								></Tables>
     );
   }
 }
