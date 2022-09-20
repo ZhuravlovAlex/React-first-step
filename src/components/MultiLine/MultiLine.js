@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './MultiLine.module.css';
 
-class MultiLine extends React.Component {
+/*class MultiLine extends React.Component {*/
+function MultiLine (_props) {
 
-	constructor(props) {
-		super(props);
-		this.props = props;
-	}
+	const [props] = useState(_props)
 
 
-  render() {
+	// constructor(props) {
+	// 	super(props);
+	// 	this.props = props;
+	// }
+
+
+  /*render() { */
     return (
 			<div className={styles.multi}>
 				<label htmlFor="about_form" className={styles.label}>About yourself</label>
@@ -19,8 +23,8 @@ class MultiLine extends React.Component {
 					id="about_form" 
 					required
 					placeholder='Enter Info About Yourself'
-					value = {this.props.about}
-					onChange = {this.props.handleAboutChange}
+					value = {props.about}
+					onChange = {props.handleAboutChange}
 				/>
 
 				<label htmlFor="stack_form" className={styles.label}>Technology stack</label>
@@ -30,12 +34,12 @@ class MultiLine extends React.Component {
 				id="stack_form" 
 				required
 				placeholder='Enter Your Technology Stack'
-				value = {this.props.stack}
-				onChange = {this.props.handleStackChange}
+				value = {props.stack}
+				onChange = {props.handleStackChange}
 				></textarea>
 			</div>
     );
   }
-}
+/*}*/
 
 export default MultiLine;

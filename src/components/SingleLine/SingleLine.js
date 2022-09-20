@@ -1,16 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './SingleLine.module.css';
 
 
 
-class SingleLine extends React.Component {
-	
-	constructor(props) {
-		super(props);
-		this.props = props;
-	}
+/*class SingleLine extends React.Component {*/
+function SingleLine (_props) {
 
-  render() {
+	const [props] = useState(_props);
+	
+	// constructor(props) {
+	// 	super(props);
+	// 	this.props = props;
+	// }
+
+  /*render() {*/
     return (
 			<div className={styles.single}>
 				<label htmlFor="name_form">Name</label>
@@ -19,8 +22,8 @@ class SingleLine extends React.Component {
 					required 
 					id="name_form" 
 					placeholder='Enter Name'
-					value = {this.props.firstName}
-					onChange={this.props.handleFNameChange}
+					value = {props.firstName}
+					onChange={props.handleFNameChange}
 				/>
 
 				<label htmlFor="surname_form">Surname</label>
@@ -28,8 +31,8 @@ class SingleLine extends React.Component {
 					id="surname_form" 
 					required
 					placeholder='Enter Surname'
-					value = {this.props.surName}
-					onChange={this.props.handleSNameChange}
+					value = {props.surName}
+					onChange={props.handleSNameChange}
 				/>
 
 				<label htmlFor="birthday_form">Birthday date</label>
@@ -37,9 +40,9 @@ class SingleLine extends React.Component {
 					type='date'
 					required
 					id="birthday_form" 
-					value={this.props.birthDate}
+					value={props.birthDate}
 					placeholder='Enter Birthday date'
-					onChange={this.props.handleBirthDateChange}
+					onChange={props.handleBirthDateChange}
 				/>
 
 				<label htmlFor="phone_form">Phone #</label>
@@ -49,9 +52,9 @@ class SingleLine extends React.Component {
 					required 
 					id="phone_form" 
 					placeholder='Enter Phone #'
-					value={this.props.phone}
+					value={props.phone}
 					pattern ="[0-9]{1}-[0-9]{4}-[0-9]{2}-[0-9]{2}"	
-					onChange={this.props.handlePhoneChange}
+					onChange={props.handlePhoneChange}
 				/>
 
 				<label htmlFor="web-site_form">Web Site</label>
@@ -62,14 +65,14 @@ class SingleLine extends React.Component {
 					placeholder='Enter Web Site'
 					pattern="https://.*"
 					size='30'
-					value={this.props.website}
-					onChange={this.props.handleWebsiteChange}
+					value={props.website}
+					onChange={props.handleWebsiteChange}
 				/>
 			</div>
     );
   }
 	
-}
+/*}*/
 
 
 export default SingleLine;

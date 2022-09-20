@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Btns.module.css';
 
-class Btns extends React.Component {
-  render() {
+/*class Btns extends React.Component {*/
+function Btns (_props) {
+
+	const [props] = useState(_props)
+
+  /*render() { */
     return (
 			<div className={styles.btns}>
-				<input type="button"  onClick = {this.handleClick} value="Cancel" />
-				<input type="submit"  onClick = {this.handleClick} value="Save" />
+				<input type="button"  onClick = {props.handleClick} value="Cancel" />
+				<input type="submit"  onClick = {props.handleClick} value="Save" />
 			</div>
       
     );
   }
-}
+/*} */
 
 export default Btns;

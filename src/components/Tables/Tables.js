@@ -1,18 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Tables.module.css';
 
-class Tables extends React.Component {
+/*class Tables extends React.Component { */
+function Tables (props.state) {
 
-	constructor(props) {
-		super(props);
-		this.state = props.state;
-	}
+	const [props] = useState(props.state)
+	// constructor(props) {
+	// 	super(props);
+	// 	this.state = props.state;
+	// }
 
-	render() {
+	/*render() { */
 		return (
 			<div className={styles.table}>
 				<h2>
-					{this.state.firstName} {this.state.surName}
+					{props.state.firstName} {props.state.surName}
 				</h2>
 				<table border={1}>
 					<tbody>
@@ -28,6 +30,6 @@ class Tables extends React.Component {
 			</div>
 		)
 	}
-}
+/*} */
 
 export default Tables;
