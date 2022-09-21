@@ -9,8 +9,8 @@ function Btns (_props) {
   /*render() { */
     return (
 			<div className={styles.btns}>
-				<input type="button"  onClick = {props.handleClick} value="Cancel" />
-				<input type="submit"  onClick = {props.handleClick} value="Save" />
+				<input type="button" value="Cancel" />
+				<input type="submit" onClick={_props.onClick} value="Save" />
 			</div>
       
     );

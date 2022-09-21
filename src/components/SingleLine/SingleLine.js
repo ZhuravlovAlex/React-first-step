@@ -5,7 +5,7 @@ import styles from './SingleLine.module.css';
 
 /*class SingleLine extends React.Component {*/
 function SingleLine (_props) {
-
+	
 	const [props] = useState(_props);
 	
 	// constructor(props) {

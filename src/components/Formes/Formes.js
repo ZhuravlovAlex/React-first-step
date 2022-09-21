@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './Formes.module.css';
 import SingleLine from '../SingleLine/SingleLine';
 import MultiLine from '../MultiLine/MultiLine';
 import Btns from '../Btns/Btns';
 import Tables from '../Tables/Tables';
 
-class Formes extends React.Component {
+/*class Formes extends React.Component { */
+function Formes () {
 
-	constructor(props) {
-		super(props);
-		this.state = {
+	const [state, stateUpdate] = useState({
 			website: '',
 			firstName: '',
 			surName: '',
@@ -18,15 +17,16 @@ class Formes extends React.Component {
 			about: '',
 			stack: '',
 			isSubmitted: false
-		}
+		})
 
-		this.updateState = this.updateState.bind(this);
-		this.handleSubmit = this.handleSubmit.bind(this);
-	}
+		// getStateUpdateFunction = getStateUpdateFunction.bind(this);
+		// this.handleSubmit = this.handleSubmit.bind(this);
+	
 
-	updateState (key) {
+	const getStateUpdateFunction = (key) => {
 		return (event) => {
-			this.setState({[key]: event.target.value})
+			state[key] = event.target.value;
+			stateUpdate(state)
 		}
 	}
 
@@ -59,36 +59,32 @@ class Formes extends React.Component {
 	// 	this.setState({stack: event.target.value});
 	// }
 
-	handleSubmit() {
-		console.log('form is submitted');
-
-		this.setState({isSubmitted: true});
+	const handleSubmit = () => {
+		state.isSubmitted = true;
+		console.log(state);
+		stateUpdate(state);
 	}
 
-  render() {
+		
     return (
-			!this.state.isSubmitted ?
-			<div className={styles.main}>
-				<form onSubmit={this.handleSubmit}>
+			<div>
+				{state.isSubmitted ? <Tables state={state}/> :
+				<div className={styles.main}>
 					<h1 className='title'>Questionnaire</h1>
 					<SingleLine
-						handleFNameChange={this.updateState('firstName')}
-						handleSNameChange={this.updateState('surName')}
-						handlePhoneChange={this.updateState('phone')}
-						handleBirthDateChange={this.updateState('birthDate')}
-						handleWebsiteChange={this.updateState('website')}
-					></SingleLine>
+						handleFNameChange={getStateUpdateFunction('firstName')}
+						handleSNameChange={getStateUpdateFunction('surName')}
+						handlePhoneChange={getStateUpdateFunction('phone')}
+						handleBirthDateChange={getStateUpdateFunction('birthDate')}
+						handleWebsiteChange={getStateUpdateFunction('website')}/>
 					<MultiLine
-						handleAboutChange={this.updateState('about')}
-						handleStackChange={this.updateState('stack')}
-					></MultiLine>
-					<Btns></Btns>
-				</form>
-			</div> : <Tables
-									state={this.state}
-								></Tables>
-    );
-  }
+						handleAboutChange={getStateUpdateFunction('about')}
+						handleStackChange={getStateUpdateFunction('stack')}/>
+					<Btns onClick={handleSubmit}></Btns>
+				</div>
+				}
+			</div>
+		);
 }
 
 
