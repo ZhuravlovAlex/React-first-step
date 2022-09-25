@@ -17,20 +17,22 @@ function MultiLine (_props) {
     return (
 			<div className={styles.multi}>
 				<label htmlFor="about_form" className={styles.label}>About yourself</label>
-				<input 
+				<textarea 
 					className={styles.textarea} 
+					rows={7}
 					maxLength='600' 
 					id="about_form" 
 					required
 					placeholder='Enter Info About Yourself'
 					value = {props.about}
 					onChange = {props.handleAboutChange}
-				/>
+				></textarea>
 
 				<label htmlFor="stack_form" className={styles.label}>Technology stack</label>
 				<textarea 
 				className={styles.textarea} 
 				rows={7} 
+				maxLength='600'
 				id="stack_form" 
 				required
 				placeholder='Enter Your Technology Stack'
