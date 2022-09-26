@@ -1,0 +1,20 @@
+.single {
+	display: flex;
+	flex-direction: column;
+}
+
+.single>textarea {
+	margin: 4px 40px 20px 40px;
+	border-radius: 4px;
+}
+.single>input {
+	margin: 4px 40px 20px 40px;
+	border-radius: 4px;
+}
+
+
+.single>label {
+	margin-left: 20px;
+	font-size: 14px;
+	font-weight: 700;
+}

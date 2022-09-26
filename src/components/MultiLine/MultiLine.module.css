@@ -1,0 +1,25 @@
+.multi {
+	display: flex;
+	flex-direction: column;
+}
+
+.textarea {
+	margin: 4px 40px 6px 40px;
+	border-radius: 4px;
+}
+
+.label {
+	margin-left: 20px;
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.countText {
+	text-align: end;
+	font: "Century Gothic", Futura, sans-serif;
+	color: bisque;
+	margin-right: 40px;
+	margin-top: 0;
+	font-size: 12px;
+	font-weight: 500;
+}
