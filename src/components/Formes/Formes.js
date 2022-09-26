@@ -26,6 +26,8 @@ function Formes () {
 	const getStateUpdateFunction = (key) => {
 		return (event) => {
 			state[key] = event.target.value;
+
+				console.log(state);
 			stateUpdate(state)
 		}
 	}
@@ -78,6 +80,7 @@ function Formes () {
 						handleBirthDateChange={getStateUpdateFunction('birthDate')}
 						handleWebsiteChange={getStateUpdateFunction('website')}/>
 					<MultiLine
+						about={state.about}
 						handleAboutChange={getStateUpdateFunction('about')}
 						handleStackChange={getStateUpdateFunction('stack')}/>
 					<Btns onClick={handleSubmit}></Btns>
