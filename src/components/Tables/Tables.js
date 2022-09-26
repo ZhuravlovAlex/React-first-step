@@ -1,16 +1,12 @@
 import React, { useState } from 'react';
 import styles from './Tables.module.css';
 
-/*class Tables extends React.Component { */
+
 function Tables (state) {
 
 	const [props] = useState(state)
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = props.state;
-	// }
-
-	/*render() { */
+	
+	
 		return (
 			<div className={styles.table}>
 				<h2>
@@ -30,6 +26,6 @@ function Tables (state) {
 			</div>
 		)
 	}
-/*} */
+
 
 export default Tables;

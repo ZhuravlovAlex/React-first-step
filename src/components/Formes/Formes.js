@@ -5,7 +5,7 @@ import MultiLine from '../MultiLine/MultiLine';
 import Btns from '../Btns/Btns';
 import Tables from '../Tables/Tables';
 
-/*class Formes extends React.Component { */
+
 function Formes () {
 
 	const [state, stateUpdate] = useState({
@@ -19,10 +19,7 @@ function Formes () {
 			isSubmitted: false
 		})
 
-		// getStateUpdateFunction = getStateUpdateFunction.bind(this);
-		// this.handleSubmit = this.handleSubmit.bind(this);
-	
-
+			
 	const getStateUpdateFunction = (key) => {
 		return (event) => {
 			state[key] = event.target.value;
@@ -32,34 +29,6 @@ function Formes () {
 		}
 	}
 
-	// handleWebsiteChange(event) {
-	// 	this.setState({website: event.target.value})
-	// }
-
-	// handleFNameChange (event) {
-	// 	this.setState({firstName: event.target.value});
-	// 	console.log(this.state)
-	// };
-  
-	// handleSNameChange (event) {
-	// 	this.setState({surName: event.target.value});
-	// }
-
-	// handlePhoneChange (event) {
-	// 	this.setState({phone: event.target.value});
-	// }
-
-	// handleBirthDateChange (event) {
-	// 	this.setState({birthDate: event.target.value});
-	// }
-
-	// handleAboutChange (event) {
-	// 	this.setState({about: event.target.value});
-	// }
-
-	// handleStackChange (event) {
-	// 	this.setState({stack: event.target.value});
-	// }
 
 	const handleSubmit = () => {
 		state.isSubmitted = true;
